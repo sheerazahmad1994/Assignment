@@ -1,0 +1,65 @@
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kids.core.ui.fragments.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--List-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.example.kids.utils.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="10dp"
+                android:text="@string/new_orders"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/_22sdp"
+                android:visibility="gone"
+                app:font_name="objectiveBold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp" />
+
+            <RelativeLayout
+                android:id="@+id/no_order_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <com.example.kids.utils.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/no_pending_order" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.example.kids.utils.CustomTextView
+            android:id="@+id/noRecordFound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_order_available"
+            android:textColor="@color/air_awesome_purple_100"
+            android:textSize="@dimen/_22sdp"
+            android:visibility="gone"
+            app:font_name="objectiveMedium" />
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
